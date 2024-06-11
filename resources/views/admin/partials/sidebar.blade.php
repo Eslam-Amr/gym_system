@@ -41,6 +41,8 @@
             icon="fe-codesandbox" />
              <x-sidebar-tab href="{{ route('admin.subscriber') }}" name="{{ __('keywords.subscriber') }}"
             icon="fe-codesandbox" />
+             <x-sidebar-tab href="{{ route('admin.nutritions.index') }}" name="{{ __('keywords.nutrition') }}"
+            icon="fe-codesandbox" />
             {{-- features --}}
             {{-- <x-sidebar-tab href="{{ route('admin.features.index') }}" name="{{ __('keywords.features') }}"
             icon="fe-bookmark" /> --}}

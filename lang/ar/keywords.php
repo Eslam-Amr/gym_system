@@ -105,4 +105,5 @@ return [
     'from'=>'من',
     'to'=>'الي',
     'subscriber'=>'المشتركون',
+    'nutrition'=>'التغذية',
 ];
