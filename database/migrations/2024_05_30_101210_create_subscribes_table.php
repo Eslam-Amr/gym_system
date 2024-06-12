@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('program_id')->constrained('programs')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('nutrition_id')->constrained('nutritions')->cascadeOnDelete()->cascadeOnUpdate();
             $table->date('to');
 
             $table->timestamps();

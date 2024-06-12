@@ -9,25 +9,28 @@
         $plans = json_decode($nutrition['plan'], true);
     @endphp
 
+{{-- @dd($plans) --}}
     @if (is_array($plans))
         @foreach ($plans as $plan)
             <div class="mb-5">
                 <h2>Date: {{ $plan['date'] }}</h2>
                 <div class="row">
-                    @foreach ($plan['plan'] as $mealName => $mealDetails)
+                    {{-- @dd($plan) --}}
+                    @foreach ($plan['meal'] as $mealName => $mealDetails)
+                    {{-- @dd($mealName,$mealDetails) --}}
                         <div class="col-md-3 mb-4">
                             <div class="card h-100">
                                 <div class="card-body">
                                     <h5 class="card-title">Meal: {{ $mealName }}</h5>
 
-                                    @if (isset($mealDetails['description']) && is_array($mealDetails['description']))
+                                    {{-- @if (isset($mealDetails['description']) && is_array($mealDetails['description'])) --}}
                                         <h6>Description:</h6>
                                         <ul class="list-unstyled">
-                                            @foreach ($mealDetails['description'] as $item => $quantity)
-                                                <li>{{ $item }}: {{ $quantity }}</li>
+                                            @foreach ($mealDetails as $item => $quantity)
+                                                <li> {{ $quantity }}</li>
                                             @endforeach
                                         </ul>
-                                    @endif
+                                    {{-- @endif --}}
 
                                     @if (isset($mealDetails['image']))
                                         <div>Image: <img src="{{ asset('images/' . $mealDetails['image']) }}" alt="{{ $mealName }} image" class="img-fluid"></div>

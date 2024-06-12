@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('nutrition', function (Blueprint $table) {
+        Schema::create('nutritions', function (Blueprint $table) {
             $table->id();
             $table->json('plan');
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('program_id')->constrained('programs')->cascadeOnDelete()->cascadeOnUpdate();
             // $table->date('date');
-            $table->string('image')->nullable();
-            $table->string('video')->nullable();
+            // $table->string('image')->nullable();
+            // $table->string('video')->nullable();
 
             $table->timestamps();
         });
