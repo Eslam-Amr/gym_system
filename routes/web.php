@@ -8,6 +8,7 @@ use App\Http\Controllers\User\Home\HomeController;
 use App\Http\Controllers\Admin\Program\ProgramController;
 use App\Http\Controllers\User\Subscribe\SubscribeController;
 use App\Http\Controllers\Admin\Nutrition\NutritionController;
+use App\Http\Controllers\User\Nutrition\NutritionPlanController;
 use App\Http\Controllers\User\Subscribe\CurrentSubscribeController;
 use App\Http\Controllers\User\Subscribe\SubscribeHistroyController;
 
@@ -34,6 +35,7 @@ Route::post('/subscribe/{program}',SubscribeController::class)->name('subscribe.
 // Route::post('/subscribe/history',[SubscribeController::class,'history'])->name('subscribe.history');
 Route::get('/subscribe/history',SubscribeHistroyController::class)->name('subscribe.history');
 Route::get('/subscribe/currentPlan',CurrentSubscribeController::class)->name('subscribe.currentPlan');
+Route::get('/nutritionPlan',NutritionPlanController::class)->name('currentNutritionPlan');
 Route::view('/payment','front.subscribe.payment.payment');
 
 Route::middleware(['auth'])->group(function () {

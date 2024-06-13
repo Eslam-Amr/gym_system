@@ -36,7 +36,8 @@
                         <li><a href="{{ route('subscribe.history') }}">subscription history</a></li>
                         <li><a href="{{ route('subscribe.currentPlan') }}">current plan</a></li>
                         @auth
-                      <li>
+                        <li><a href="{{ route('currentNutritionPlan') }}">nutrition plan</a></li>
+                        <li>
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button type="submit">
