@@ -67,9 +67,11 @@ require __DIR__.'/auth.php';
         // Route::view('/services/create', 'admin.services.create')->name('create');
         Route::resource('/programs', ProgramController::class);
 
-        Route::resource('/nutritions', NutritionController::class)->except(['create','store']);
-        Route::get('/nutritions/create/{subscribe}', [NutritionController::class,'create'])->name('nutritions.create');
-        Route::post('/nutritions/create/{subscribe}', [NutritionController::class,'store'])->name('nutritions.store');
+        Route::resource('/nutritions', NutritionController::class)->except(['create','store','update','edit','destroy']);
+        Route::get('/nutritions/{subscribe}/create', [NutritionController::class,'create'])->name('nutritions.create');
+        Route::post('/nutritions/{subscribe}', [NutritionController::class,'store'])->name('nutritions.store');
+        Route::post('/nutritions/{subscribe}/edit', [NutritionController::class,'edit'])->name('nutritions.edit');
+        Route::post('/nutritions/{subscribe}', [NutritionController::class,'update'])->name('nutritions.update');
         // Route::resource('/nutritions', NutritionController::class);
 Route::get('subscriber',App\Http\Controllers\Admin\Subscriber\SubscriberController::class)->name('subscriber');
         // Route::view('/login','admin.auth.login')->name('login');
